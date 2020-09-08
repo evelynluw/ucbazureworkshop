@@ -47,6 +47,26 @@ More information about this dataset: [Seattle Police Data](https://data.seattle.
 
 
 ### Option 2: Customer Service Data
-Description: These are records of support tickets that a hardware general store has received in the form of emails or audio converted to text.
+Description: These are records of support tickets that a fictitious hardware general store has received in the form of emails or audio converted to text.
 
-[-- Insert column description names --]
+Column descriptions
+- `SupportTicket`: unique ID of support issue received
+- `CustomerID`: unique ID of customer submitting issue
+- `DateCreated`: date of when issue was submitted and received
+- `DateCompleted`: date of closing the support ticket
+- `Escalated`: binary variable of whether a ticket was escalated to another team due to urgency (0 - no, 1 - yes)
+- `Theme`: category of support ticket
+- `Text`: text of customer ticket
+
+Theme descriptions
+- price: cost of the goods to customers,  comparison to competitors, sales, discounts
+- speed: delivery speed
+- features: product or website features
+- design: product or website design
+- reliability: product, website, and delivery reliability
+- support: tech, customer, and product support
+- security: payment info, login info
+- services: delivery, account, payment, and installation services
+- other
+
+Created by the Microsoft OCP Azure Data & AI Team
