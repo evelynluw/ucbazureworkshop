@@ -2,22 +2,29 @@ import os
 import requests
 from pprint import pprint
 import pandas as pd
-from azure.ai.textanalytics import TextAnalyticsClient
-from azure.core.credentials import AzureKeyCredential
-
-from dotenv import load_dotenv
-load_dotenv()
-subscription_key = os.getenv('SUBSCRIPTION_KEY')
-endpoint = os.getenv('ENDPOINT')
-
-def authenticate_client():
-    ta_credential = AzureKeyCredential(subscription_key)
-    text_analytics_client = TextAnalyticsClient(
-            endpoint= endpoint, credential=ta_credential)
-    return text_analytics_client
 
 
-def sentiment_analysis_example(client, documents):
+subscription_key = ...
+endpoint = ...
+
+
+# This code here isn't required, unless you want to hide your subscription credentials from the public. Look into python-dotenv.
+# from dotenv import load_dotenv
+# load_dotenv()
+# subscription_key = os.getenv('SUBSCRIPTION_KEY')
+# endpoint = os.getenv('ENDPOINT')
+
+
+
+
+# def authenticate_client():
+#     ta_credential = AzureKeyCredential(subscription_key)
+#     text_analytics_client = TextAnalyticsClient(
+#             endpoint= endpoint, credential=ta_credential)
+#     return text_analytics_client
+
+
+def sentiment_analysis_example(documents):
     sentiment_url = endpoint + "/text/analytics/v3.0/sentiment"
     headers = {"Ocp-Apim-Subscription-Key": subscription_key}
     response = requests.post(sentiment_url, headers=headers, json=documents)
@@ -28,7 +35,7 @@ def sentiment_analysis_example(client, documents):
     return sentiments
 
 
-def extract_key_phrases(client, documents):
+def extract_key_phrases(documents):
     keyphrase_url = endpoint + "/text/analytics/v3.0/keyphrases"
     headers = {"Ocp-Apim-Subscription-Key": subscription_key}
     response = requests.post(keyphrase_url, headers=headers, json=documents)
@@ -38,7 +45,7 @@ def extract_key_phrases(client, documents):
     pprint(key_phrases)
     return key_phrases
 
-def identify_entities(client, documents):
+def identify_entities(documents):
     entities_url = endpoint + "/text/analytics/v3.0/entities/recognition/general"
     headers = {"Ocp-Apim-Subscription-Key": subscription_key}
     response = requests.post(entities_url, headers=headers, json=documents)
@@ -48,7 +55,7 @@ def identify_entities(client, documents):
           
 
 if __name__ == "__main__":
-    data = pd.read_csv("data.txt")
+    # data = pd.read_csv("data.txt")
     # data.columns.values
     # summary = data["Theme"].tolist() <-- this is the list of "themes" which will be replaced by the text ticket
     # print(type(summary))
@@ -59,8 +66,9 @@ if __name__ == "__main__":
             "text": "I've been trying to talk to someone about my sink problem. It won't hold all of my fish."}
     ]}
 
-    client = authenticate_client()
-    sentiments = sentiment_analysis_example(client, documents)
-    key_phrases = extract_key_phrases(client, documents)
-    identify_entities(client, documents)
+
+    # client = authenticate_client()
+    sentiments = sentiment_analysis_example(documents)
+    key_phrases = extract_key_phrases(documents)
+    identify_entities(documents)
 
