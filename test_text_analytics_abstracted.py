@@ -14,9 +14,6 @@ endpoint = ...
 # subscription_key = os.getenv('SUBSCRIPTION_KEY')
 # endpoint = os.getenv('ENDPOINT')
 
-
-
-
 # def authenticate_client():
 #     ta_credential = AzureKeyCredential(subscription_key)
 #     text_analytics_client = TextAnalyticsClient(
@@ -45,6 +42,7 @@ def extract_key_phrases(documents):
     pprint(key_phrases)
     return key_phrases
 
+
 def identify_entities(documents):
     entities_url = endpoint + "/text/analytics/v3.0/entities/recognition/general"
     headers = {"Ocp-Apim-Subscription-Key": subscription_key}
@@ -52,13 +50,15 @@ def identify_entities(documents):
     entities = response.json()
     pprint(entities)
 
-          
 
 if __name__ == "__main__":
-    # data = pd.read_csv("data.txt")
-    # data.columns.values
-    # summary = data["Theme"].tolist() <-- this is the list of "themes" which will be replaced by the text ticket
-    # print(type(summary))
+    """
+    Read in your data here and call the functions above.
+    You'll likely do a bulk of your coding here.
+
+    - `documents`: an example of the required input format by the Text Analytics API
+    """
+
     documents = {"documents": [
         {"id": "1", "language": "en",
             "text": "I do not like this hammer made by Black & Decker. It does not work correctly. I want to request a return."},
@@ -66,9 +66,9 @@ if __name__ == "__main__":
             "text": "I've been trying to talk to someone about my sink problem. It won't hold all of my fish."}
     ]}
 
-
+    # Uncomment the line below if you choose to use the SDK in the future
     # client = authenticate_client()
     sentiments = sentiment_analysis_example(documents)
     key_phrases = extract_key_phrases(documents)
-    identify_entities(documents)
+    entities = identify_entities(documents)
 
