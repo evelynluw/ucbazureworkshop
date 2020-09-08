@@ -3,7 +3,7 @@ import requests
 from pprint import pprint
 import pandas as pd
 
-
+# Fill in your credentials
 subscription_key = ...
 endpoint = ...
 
