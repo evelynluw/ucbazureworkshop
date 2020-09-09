@@ -8,8 +8,6 @@ subscription_key = ...
 endpoint = ...
 
 
-# JASON AND BABAK LEARNING GITHUB
-
 # This code here isn't required, unless you want to hide your subscription credentials from the public. Look into python-dotenv.
 # from dotenv import load_dotenv
 # load_dotenv()
