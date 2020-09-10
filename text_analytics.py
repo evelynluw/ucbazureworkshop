@@ -54,8 +54,20 @@ def identify_entities(documents):
     pprint(entities)
 
 
+def convert_text_to_JSON(data):
+    """
+    Convert text data to the format required by the
+    Text Analytics API. Example format included below in the main function.
+    """
+    pass
+
+
 def parse_output(output_JSON):
-    return
+    """
+    Convert the response body from the API request to
+    select the values you want.
+    """
+    pass
 
 
 if __name__ == "__main__":
