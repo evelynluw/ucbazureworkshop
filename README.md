@@ -11,7 +11,7 @@ The slides used for the demo are included in this repository.
 - [Free Azure student subscription](https://azure.microsoft.com/en-us/free/students/)
 - Python
 - Anaconda (Pandas, Numpy)
-- Jupyter Notebooks or your preferred IDE
+- Jupyter Notebooks (such as [Azure Notebooks](https://notebooks.azure.com/)) or your preferred IDE
 - Git
 
 ## Setup
