@@ -3,9 +3,9 @@
 
 This workshop was designed for UC Berkeley's PiE Datathon, sponsored by Microsoft.
 
-We introduce you to Microsoft Azure's cognitive services using two datasets. In this repository, you'll find the materials to conduct text analytics on two datasets using the Cognitive Services Text Analytics API.
+We introduce you to Microsoft Azure's cognitive services using two datasets. In this repository, you'll find the materials to conduct text analytics on one of two datasets using the Cognitive Services Text Analytics API.
 
-You can check out the text analytics demo [here -- REPLACE WITH GOOGLE DRIVE LINK](LINK).
+The slides used for the demo are included in this repository.
 
 ## Setup Requirements
 - [Free Azure student subscription](https://azure.microsoft.com/en-us/free/students/)
